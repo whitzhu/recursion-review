@@ -11,13 +11,11 @@ var getElementsByClassName = function(className, element, result) {
     result = [];
   }
   
-  if (element.className !== undefined && element.className.length > 0) {
-    if (element.className.indexOf(className) !== -1 ){
-      result.push(element);  
-    }
+  if (element.className !== undefined && element.className.indexOf(className) !== -1) {
+    result.push(element);     
   }
 
-  if ( element.childNodes.length > 0) {
+  if ( element.childNodes !== undefined) {
     for (var i = 0; i < element.childNodes.length; i++) {
       getElementsByClassName(className, element.childNodes[i], result);
     }
